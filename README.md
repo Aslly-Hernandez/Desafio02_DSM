@@ -3,9 +3,8 @@
 <p align="center">Una aplicación Android para gestionar estudiantes y notas con Firebase. 📚✨</p>
 
 <p align="center">
- <img width="300" height="300" alt="300" src="https://github.com/user-attachments/assets/97dfae06-dae2-4800-a5c4-7f567a186016" />
+ <img width="500" height="500" alt="500" src="https://github.com/user-attachments/assets/688f6e7c-ef8f-4f3d-98be-c8aca74febca" />
 </p>
-
 
 ---
 
@@ -56,6 +55,7 @@
 
 ##  Enlace Video
 
+https://drive.google.com/uc?id=1S0pzMibhIsakwZvpwoAoKDSnKp785rIx&export=download
 
 ## ✨ Funcionalidades Principales
 🔑 Login y Registro
