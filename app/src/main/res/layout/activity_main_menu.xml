@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnAddStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Estudiante"/>
+
+        <Button
+            android:id="@+id/btnAddNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar Nota"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnListStudents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar Estudiantes"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnListNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar Notas"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>

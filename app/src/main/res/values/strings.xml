@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AppColegio</string>
+
+    <!-- Login -->
+    <string name="login_title">Iniciar sesión</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="btn_goto_register">Registrarse</string>
+
+    <!-- Registro -->
+    <string name="register_title">Crear cuenta</string>
+    <string name="btn_register">Registrar</string>
+
+    <!-- Menú principal -->
+    <string name="btn_add_student">Registrar Estudiante</string>
+    <string name="btn_list_students">Listar Estudiantes</string>
+    <string name="btn_add_note">Registrar Nota</string>
+    <string name="btn_list_notes">Listar Notas</string>
+    <string name="btn_logout">Cerrar Sesión</string>
+</resources>

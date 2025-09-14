@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "810385452415",
+    "firebase_url": "https://colegioapp-fc5ec-default-rtdb.firebaseio.com",
+    "project_id": "colegioapp-fc5ec",
+    "storage_bucket": "colegioapp-fc5ec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810385452415:android:ec3cea8792180532db7e4a",
+        "android_client_info": {
+          "package_name": "com.example.appcolegio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyOXUaY8bphO3gmvMetZWAQM_upm3ECoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810385452415:android:5e9617efa17391d4db7e4a",
+        "android_client_info": {
+          "package_name": "com.example.colegioapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyOXUaY8bphO3gmvMetZWAQM_upm3ECoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
