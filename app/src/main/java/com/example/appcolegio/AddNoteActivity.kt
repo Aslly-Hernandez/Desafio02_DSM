@@ -3,8 +3,7 @@ package com.example.appcolegio
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class AddNoteActivity : AppCompatActivity() {
 
@@ -14,6 +13,8 @@ class AddNoteActivity : AppCompatActivity() {
     private lateinit var etFinalNote: EditText
     private lateinit var btnSaveNote: Button
     private lateinit var dbRef: DatabaseReference
+    private lateinit var studentsRef: DatabaseReference
+    private val studentList = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,17 +27,19 @@ class AddNoteActivity : AppCompatActivity() {
         btnSaveNote = findViewById(R.id.btnSaveNote)
 
         dbRef = FirebaseDatabase.getInstance().getReference("notes")
+        studentsRef = FirebaseDatabase.getInstance().getReference("estudiantes")
 
-        val students = listOf("Juan Pérez", "Ana López")
         val grades = listOf("1°", "2°", "3°", "4°", "5°")
         val subjects = listOf("Matemáticas", "Lenguaje", "Ciencias", "Historia")
 
-        spinnerStudent.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, students)
         spinnerGrade.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, grades)
         spinnerSubject.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, subjects)
 
+        // Cargar estudiantes desde Firebase
+        loadStudents()
+
         btnSaveNote.setOnClickListener {
-            val student = spinnerStudent.selectedItem.toString()
+            val student = spinnerStudent.selectedItem?.toString() ?: ""
             val grade = spinnerGrade.selectedItem.toString()
             val subject = spinnerSubject.selectedItem.toString()
             val noteText = etFinalNote.text.toString()
@@ -64,5 +67,31 @@ class AddNoteActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun loadStudents() {
+        studentsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                studentList.clear()
+                for (studentSnap in snapshot.children) {
+                    val nombre = studentSnap.child("nombre").getValue(String::class.java)
+                    if (!nombre.isNullOrBlank()) {
+                        studentList.add(nombre)
+                    }
+                }
+
+                val adapter = ArrayAdapter(
+                    this@AddNoteActivity,
+                    android.R.layout.simple_spinner_item,
+                    studentList
+                )
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinnerStudent.adapter = adapter
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@AddNoteActivity, "Error al cargar estudiantes", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
